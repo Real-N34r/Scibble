@@ -5,6 +5,7 @@ import AvatarCreator from '../components/AvatarCreator';
 import HowToPlayModal from '../components/HowToPlayModal';
 import { v4 as uuidv4 } from 'uuid';
 import { PencilRuler, HelpCircle } from 'lucide-react';
+import badge from '../assets/badge.svg';
 
 const HomePage: React.FC = () => {
   const navigate = useNavigate();
@@ -102,7 +103,18 @@ const HomePage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen flex flex-col items-center justify-center p-4 relative">
+      {/* Bolt.new Hackathon Badge - Top Left */}
+      <a
+        href="https://bolt.new/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute top-4 left-4 z-10 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 transition-transform duration-300 hover:scale-110"
+        title="Built with Bolt.new"
+      >
+        <img src={badge} alt="Hackathon Badge" className="w-full h-full" />
+      </a>
+
       <div className="w-full max-w-lg bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl overflow-hidden text-white transition-all duration-300 hover:shadow-3xl border border-white/20">
         <div className="p-8 bg-gradient-to-r from-purple-600/80 to-indigo-600/80 backdrop-blur-sm flex items-center justify-center relative">
           <button
